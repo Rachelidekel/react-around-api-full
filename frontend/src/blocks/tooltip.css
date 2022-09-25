@@ -1,0 +1,41 @@
+.tooltip__icon-sign {
+  max-width: 120px;
+  margin: 0 auto;
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  padding-top: 26px;
+  margin-bottom: 32px;
+}
+
+.tooltip__status-message {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000000;
+  max-width: 358px;
+  margin-top: 0;
+  margin: 0 auto;
+  margin-bottom: 26px;
+}
+
+@media screen and (max-width: 600px) {
+  .tooltip__icon-sign {
+    max-width: 120px;
+    margin-bottom: 40px;
+    padding-top: 25px;
+  }
+
+  .tooltip__status-message {
+    width: 244px;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}

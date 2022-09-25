@@ -1,0 +1,145 @@
+.auth__wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.auth__title {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+  background: #000000;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.auth__form {
+  background: #000000;
+  margin: 0 auto;
+  max-width: 358px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__input {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 2px solid #cccccc;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 358px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  outline: none;
+  background: #000000;
+  color: #ffffff;
+  padding-bottom: 13px;
+}
+
+.auth__input:first-child {
+  margin-bottom: 30px;
+}
+
+.auth__input::placeholder {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #cccccc;
+}
+
+.auth__button {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 358px;
+  color: #000000;
+  background: #ffffff;
+  margin-top: 216px;
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease-in-out;
+  padding: 0;
+  min-height: 50.15px;
+  border: none;
+  border-radius: 2px;
+}
+
+.auth__button:hover {
+  cursor: pointer;
+  opacity: 85%;
+}
+
+.auth__link {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  background: #000000;
+  color: #ffffff;
+  transition: opacity 0.3s ease-in-out;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+.auth__link:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+@media screen and (max-width: 600px) {
+  .auth__wrapper {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .auth__title {
+    max-width: 260px;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .auth__form {
+    max-width: 260px;
+  }
+
+  .auth__input {
+    max-width: 260px;
+  }
+
+  .auth__button {
+    max-width: 260px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    margin-top: 173px;
+    margin-bottom: 20px;
+  }
+
+  .auth__link {
+    max-width: 260px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+}
