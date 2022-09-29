@@ -29,14 +29,13 @@ const createCard = (req, res, next) => {
 };
 
 const deleteCard = (req, res, next) => {
-  console.log(id);
   const { id } = req.params;
   Card.findById(id)
     .orFail(() => {
       throw new NotFoundError('No card found with that id');
     })
     .then((card) => {
-      if (!card.owner.equals(req.user._id)) {
+      if (!card.owner.equals(req.user)) {
         next(new ForbiddenError("You cannot delete someone else's card"));
       } else {
         Card.deleteOne(card).then(() => res.send(card));
@@ -47,11 +46,7 @@ const deleteCard = (req, res, next) => {
 
 const updateLike = (req, res, next, method) => {
   const { id } = req.params;
-  Card.findByIdAndUpdate(
-    id,
-    { [method]: { likes: req.user._id } },
-    { new: true }
-  )
+  Card.findByIdAndUpdate(id, { [method]: { likes: req.user } }, { new: true })
     .orFail(() => {
       throw new NotFoundError('No card found with this id');
     })

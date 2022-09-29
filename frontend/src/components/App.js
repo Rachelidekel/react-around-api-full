@@ -156,7 +156,7 @@ function App() {
         );
         closeAllPopups();
       })
-    
+
       .catch(console.log)
       .finally(() => setIsLoading(false));
   }
@@ -181,7 +181,6 @@ function App() {
         const newCardArray = [...cards];
         newCardArray.push(newCard.data);
         setCards(newCardArray);
-        console.log(cards);
         closeAllPopups();
       })
       .catch(console.log)

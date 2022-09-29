@@ -32,7 +32,6 @@ const createUser = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
-  console.log(req.body);
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {

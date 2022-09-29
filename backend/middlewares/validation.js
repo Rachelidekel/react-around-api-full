@@ -1,6 +1,6 @@
 const { Joi, celebrate } = require('celebrate');
 const validator = require('validator');
-const { objectId } = require('mongoose').Types;
+const { ObjectId } = require('mongoose').Types;
 
 const validateURL = (value, helpers) => {
   if (validator.isURL(value)) {
@@ -14,7 +14,7 @@ const validateObjId = celebrate({
     id: Joi.string()
       .required()
       .custom((value, helpers) => {
-        if (objectId.isValid(value)) {
+        if (ObjectId.isValid(value)) {
           return value;
         }
         return helpers.message('Invalid id');
