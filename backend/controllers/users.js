@@ -32,7 +32,7 @@ const createUser = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
-  console.log(req.body)
+  console.log(req.body);
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
@@ -52,7 +52,7 @@ const login = (req, res, next) => {
 
 const getUsers = (req, res, next) => {
   User.find({})
-    .then((users) => res.status(200).send({ data: users }))
+    .then((users) => res.status(200).send({ users }))
     .catch(next);
 };
 
@@ -86,7 +86,7 @@ const getUserId = (req, res, next) => {
 };
 
 const updateUserInfo = (req, res, next) => {
-  const { _id } = req.user;
+  const _id = req.user;
   const { name, about } = req.body;
   User.findByIdAndUpdate(
     _id,
@@ -106,8 +106,8 @@ const updateUserInfo = (req, res, next) => {
     });
 };
 
-const updateUserAvatar = (req, res) => {
-  const { _id } = req.user;
+const updateUserAvatar = (req, res, next) => {
+  const _id = req.user;
   const { avatar } = req.body;
 
   User.findByIdAndUpdate(

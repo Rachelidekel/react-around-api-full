@@ -1,5 +1,5 @@
 {
-  "name": "around-react-auth",
+  "name": "react-around-api-full",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && scp -r ./build/* dudinka77@racheli-domain.students.nomoredomainssbs.ru:/home/dudinka77/frontend"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +44,5 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  },
-  "homepage": "https://rachelidekel.github.io/react-around-auth/"
+  }
 }

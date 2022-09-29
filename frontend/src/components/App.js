@@ -39,24 +39,12 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    if (token && isLoggedIn) {
-      api
-        .getUserInfo(token)
-        .then(([card, user]) => {
-          setCurrentUser(user.data);
-          setCards(card.data);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [isLoggedIn]);
-
-  useEffect(() => {
     if (token) {
       auth
         .checkToken(token)
         .then((res) => {
           if (res) {
-            setEmail(res.data.email);
+            setEmail(res.user.email);
             setIsLoggedIn(true);
             history.push("/");
           } else {
@@ -71,7 +59,7 @@ function App() {
     api
       .getUserInfo(token)
       .then((res) => {
-        setCurrentUser(res);
+        setCurrentUser(res.user);
       })
       .catch(console.log);
   }, [token]);
@@ -154,7 +142,6 @@ function App() {
           )
         );
       })
-
       .catch(console.log);
   }
 
@@ -169,16 +156,32 @@ function App() {
         );
         closeAllPopups();
       })
+    
       .catch(console.log)
       .finally(() => setIsLoading(false));
   }
+
+  //function handleAddPlaceSubmit(card) {
+  //setIsLoading(true);
+  //api
+  //.createCard(card, token)
+  //.then((newCard) => {
+  //setCards([newCard, ...cards]);
+  //closeAllPopups();
+  //})
+  //.catch(console.log)
+  //.finally(() => setIsLoading(false));
+  //}
 
   function handleAddPlaceSubmit(card) {
     setIsLoading(true);
     api
       .createCard(card, token)
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        const newCardArray = [...cards];
+        newCardArray.push(newCard.data);
+        setCards(newCardArray);
+        console.log(cards);
         closeAllPopups();
       })
       .catch(console.log)
@@ -189,7 +192,7 @@ function App() {
     auth
       .register(email, password)
       .then((res) => {
-        if (res.data._id) {
+        if (res._id) {
           setTooltipStatus("success");
           setIsInfoTooltipOpen(true);
           history.push("/signin");
@@ -209,10 +212,10 @@ function App() {
       .login(email, password)
       .then((res) => {
         if (res.token) {
-          setIsLoggedIn(true);
-          setEmail(email);
           localStorage.setItem("jwt", res.token);
           setToken(res.token);
+          setIsLoggedIn(true);
+          setEmail(email);
           history.push("/");
           return res;
         } else {

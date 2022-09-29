@@ -5,11 +5,11 @@ const ForbiddenError = require('../errors/forbidden-error');
 
 const getCards = (req, res, next) =>
   Card.find({})
-    .then((cards) => res.status(200).send(cards))
+    .then((card) => res.status(200).send(card))
     .catch(next);
 
 const createCard = (req, res, next) => {
-  const owner = req.user._id;
+  const owner = req.user;
   const { name, link } = req.body;
   Card.create({ name, link, owner })
     .then((card) => res.status(201).send({ data: card }))
@@ -29,6 +29,7 @@ const createCard = (req, res, next) => {
 };
 
 const deleteCard = (req, res, next) => {
+  console.log(id);
   const { id } = req.params;
   Card.findById(id)
     .orFail(() => {
@@ -38,7 +39,7 @@ const deleteCard = (req, res, next) => {
       if (!card.owner.equals(req.user._id)) {
         next(new ForbiddenError("You cannot delete someone else's card"));
       } else {
-        Card.deleteOne(card).then(() => res.send({ data: card }));
+        Card.deleteOne(card).then(() => res.send(card));
       }
     })
     .catch(next);
@@ -55,7 +56,7 @@ const updateLike = (req, res, next, method) => {
       throw new NotFoundError('No card found with this id');
     })
     .then((card) => {
-      res.send({ data: card });
+      res.send({ ...card });
     })
     .catch(next);
 };
