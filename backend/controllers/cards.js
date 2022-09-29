@@ -46,11 +46,7 @@ const deleteCard = (req, res, next) => {
 
 const updateLike = (req, res, next, method) => {
   const { id } = req.params;
-  Card.findByIdAndUpdate(
-    id,
-    { [method]: { likes: req.user._id } },
-    { new: true }
-  )
+  Card.findByIdAndUpdate(id, { [method]: { likes: req.user } }, { new: true })
     .orFail(() => {
       throw new NotFoundError('No card found with this id');
     })
