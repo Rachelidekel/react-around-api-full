@@ -23,7 +23,7 @@ function Card({ card, onCardClick, onCardLike, onDeleteClick }) {
     isOwn ? "element__delete-button" : "element_delete-button_disabled"
   }`;
 
-  const isLiked = card.likes.some((user) => user._id === currentUser._id);
+  const isLiked = card.likes.some((user) => user === currentUser._id);
   //const isLiked = false;
   const cardLikeButtonClassName = `element__title-button ${
     isLiked ? "element__title-button_active" : "element__title-button"
