@@ -42,13 +42,18 @@ The project is created with:
 
 Login and register screen
 
-
-
+![Login form](https://user-images.githubusercontent.com/98940522/193232143-04b6a51f-414f-4c7d-8227-7d879b35471f.png)
 
 Main page with image gallery
 
-![Screenshot 2022-09-30 11 34 21](https://user-images.githubusercontent.com/98940522/193229908-6e3f0069-6886-44cc-9357-e969a8e9049e.png)
+![Main page](https://user-images.githubusercontent.com/98940522/193230968-0016571a-1972-4082-af10-587005224b76.png)
+
 
 Popup form to add image
 
+![Add card form](https://user-images.githubusercontent.com/98940522/193231694-9020598b-700b-4017-9c82-2ed73647c78d.png)
+
 Image popup
+
+![Popup image](https://user-images.githubusercontent.com/98940522/193231375-58312ec1-1723-4319-abae-8edad54c49cd.png)
+
