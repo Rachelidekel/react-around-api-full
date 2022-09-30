@@ -47,8 +47,7 @@ Login and register screen
 
 Main page with image gallery
 
-![Screenshot 2022-09-30 11 34 21](https://user-images.githubusercontent.com/98940522/193228852-8cdce083-7508-4c69-9713-67431f2544ad.png)
-
+![Screenshot 2022-09-30 11 34 21](https://user-images.githubusercontent.com/98940522/193229908-6e3f0069-6886-44cc-9357-e969a8e9049e.png)
 
 Popup form to add image
 
