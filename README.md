@@ -42,7 +42,13 @@ The project is created with:
 
 Login and register screen
 
+
+
+
 Main page with image gallery
+
+![Screenshot 2022-09-30 11 34 21](https://user-images.githubusercontent.com/98940522/193228852-8cdce083-7508-4c69-9713-67431f2544ad.png)
+
 
 Popup form to add image
 
