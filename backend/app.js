@@ -1,13 +1,15 @@
 require('dotenv').config();
+
 const express = require('express');
+
 const app = express();
 const helmet = require('helmet');
 const mongoose = require('mongoose');
+const { errors } = require('celebrate');
+const cors = require('cors');
 const { limiter } = require('./middlewares/limiter');
 const routes = require('./routes/index');
 const { DB_ADDRESS } = require('./utils/config');
-const { errors } = require('celebrate');
-const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { errorHandler } = require('./middlewares/error-handler');
 

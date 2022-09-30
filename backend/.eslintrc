@@ -11,6 +11,8 @@
     "operator-linebreak": "off",
     "no-useless-escape": "off",
     "object-curly-newline": "off",
+    "newline-per-chained-call": "off",
+    "no-shadow": "off",
     "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
   }
 }
