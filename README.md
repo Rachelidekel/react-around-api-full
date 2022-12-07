@@ -2,7 +2,7 @@
 
 # Intro
 
-It's an interactive React application, called 'Around The U.S.' where users can add, remove and like image cards. The front-end is connected to a self-built API server that handles these functionalities, as well as user registration and authorization handled by the back-end server.
+It's an interactive React application, called 'Around The U.S.' where users can add, remove, and like image cards. The frontend is connected to a self-built API server that handles these functionalities, as well as user registration and authorization are handled by the backend server.
 
 The project is hosted on google could.
 
